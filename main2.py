@@ -18,10 +18,10 @@ startTime = watcher.spectator.by_summoner(region, summonerId)['gameStartTime']/1
 
 # Timer loop prep
 # Open files for specific times
-min1 = open("min1.txt", "w")
-min10 = open("min10.txt", "w")
-min15 = open("min15.txt", "w")
-min20 = open("min20.txt", "w")
+min1 = open("min1.json", "w")
+min10 = open("min10.json", "w")
+min15 = open("min15.json", "w")
+min20 = open("min20.json", "w")
 
 # Init vars
 gameLength = 0

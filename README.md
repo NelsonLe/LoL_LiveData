@@ -1,5 +1,5 @@
 # LoL_LiveData
-Collects live data from your League of Legends client while in a game.  Your League of Legends client must be in-game (spectating or playing)
+Exports live data from your League of Legends client as a JSON file.  Your League of Legends client must be in-game (spectating or playing)
 to collect data at certain times (see below for more details).
 
 ## Dependencies
