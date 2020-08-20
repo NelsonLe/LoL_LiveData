@@ -7,7 +7,7 @@ key = 'Your Riot API Key here'
 watcher = LolWatcher(key)
 region = 'na1'
 
-# Player summoner name
+# In-game player summoner name
 summonerName = 'Desired summoner name'
 
 # Get summoner id
