@@ -3,13 +3,12 @@ Exports live data from your League of Legends client as a JSON file.  Your Leagu
 to collect data at certain times (see below for more details).
 
 ## Dependencies
-- [riotwatcher](https://riot-watcher.readthedocs.io/en/latest/), install through pip
+- [riotgames.pem](https://static.developer.riotgames.com/docs/lol/riotgames.pem)
 
 ## Requirements 
 - League of Legends Client
-- Riot Games API Key
 
-Collects data at 1, 10, 15, 20 minute mark.
+Exports data at 10, 15, 20 minute mark.
 Work in progress.
 
 RIOT GAMES DISCLAIMER:
