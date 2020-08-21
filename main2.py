@@ -1,15 +1,15 @@
-import requests
-import time
+import requests, time
 
 # Timer loop prep
 # Open files for specific times
 min10 = open("min10.json", "w")
 min15 = open("min15.json", "w")
 min20 = open("min20.json", "w")
-startTime = time.time()
 
-# Init
+startTime = time.time()
 currentTime = 0
+
+# Toggle variables for when loop meets if conditions
 collected10 = False
 collected15 = False
 collected20 = False
