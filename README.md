@@ -1,5 +1,5 @@
 # LoL_LiveData
-Exports live data from your League of Legends client as a JSON file.  Your League of Legends client must be in-game (spectating or playing)
+Exports live data from your League of Legends client as a CSV file.  Your League of Legends client must be in-game (spectating or playing)
 to collect data at certain times (see below for more details).
 
 ## Dependencies
@@ -8,7 +8,7 @@ to collect data at certain times (see below for more details).
 ## Requirements 
 - League of Legends Client
 
-Exports data at 10, 15, 20 minute mark.
+Exports "allPlayers" data at 10, 15, 20 minute mark.
 Work in progress.
 
 RIOT GAMES DISCLAIMER:
