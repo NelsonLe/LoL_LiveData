@@ -1,15 +1,11 @@
 import requests
 import time
+import pandas
 
 # Timer loop prep
-# Open files for specific times
-min10 = open("min10.json", "w")
-min15 = open("min15.json", "w")
-min20 = open("min20.json", "w")
 startTime = time.time()
-
-# Init
-currentTime = 0
+currentTime = 0  # Init
+# Toggles when data is collected so it does not collect more than once
 collected10 = False
 collected15 = False
 collected20 = False
@@ -22,28 +18,25 @@ while True:
         currentTime = int(requests.get('https://127.0.0.1:2999/liveclientdata/allgamedata', verify='riotgames.pem').json()['gameData']['gameTime'])
 
     # Match data at 10 mins
-    if currentTime == 60*10 and not collected10:
-        currentMatch = requests.get('https://127.0.0.1:2999/liveclientdata/allgamedata', verify='riotgames.pem')
-        min10.write(currentMatch.text)
+    if not collected10 and currentTime == 60*10:
+        min10 = requests.get('https://127.0.0.1:2999/liveclientdata/allgamedata', verify='riotgames.pem')
         collected10 = True
         print("10 mins")
 
     # Match data at 15 mins
-    if currentTime == 60*15 and not collected15:
-        currentMatch = requests.get('https://127.0.0.1:2999/liveclientdata/allgamedata', verify='riotgames.pem')
-        min15.write(currentMatch.text)
+    if not collected15 and currentTime == 60*15:
+        min15 = requests.get('https://127.0.0.1:2999/liveclientdata/allgamedata', verify='riotgames.pem')
         collected15 = True
         print("15 mins")
 
     # Match data at 20 mins
-    if currentTime == 60*20 and not collected20:
-        currentMatch = requests.get('https://127.0.0.1:2999/liveclientdata/allgamedata', verify='riotgames.pem')
-        min20.write(currentMatch.text)
+    if not collected20 and currentTime == 60*20:
+        min20 = requests.get('https://127.0.0.1:2999/liveclientdata/allgamedata', verify='riotgames.pem')
         collected20 = True
         print("20 mins")
         break
 
-# Close the files
-min10.close()
-min15.close()
-min20.close()
+# Convert game data jsons to csv
+pandas.DataFrame.from_dict(min10.json()['allPlayers']).to_csv('min10.csv')
+pandas.DataFrame.from_dict(min15.json()['allPlayers']).to_csv('min15.csv')
+pandas.DataFrame.from_dict(min20.json()['allPlayers']).to_csv('min20.csv')
