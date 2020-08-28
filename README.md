@@ -8,7 +8,7 @@ to collect data at certain times (see below for more details).
 ## Requirements 
 - League of Legends Client
 
-Exports "allPlayers" data at 10, 15, 20 minute mark.
+Exports data not accessible via the League of Legends client or website at 10, 15, 20 minute mark.
 Work in progress.
 
 RIOT GAMES DISCLAIMER:
