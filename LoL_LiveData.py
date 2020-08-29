@@ -48,17 +48,17 @@ min15Data = min15Data[['championName', 'level', 'position', 'summonerName']]
 min20Data = min20Data[['championName', 'level', 'position', 'summonerName']]
 
 # Convert all players' scores from dict to dataframe
-min10DataScores = pandas.DataFrame.from_dict(min10.json()['allPlayers'][0]['scores'])
+min10DataScores = pandas.DataFrame(min10.json()['allPlayers'][0]['scores'], index=[0])
 for i in range(1, 10):
     temp = pandas.DataFrame(min10.json()['allPlayers'][i]['scores'], index=[i])
     min10DataScores = min10DataScores.append(temp)
 
-min15DataScores = pandas.DataFrame.from_dict(min15.json()['allPlayers'][0]['scores'])
+min15DataScores = pandas.DataFrame(min15.json()['allPlayers'][0]['scores'], index=[0])
 for i in range(1, 10):
     temp = pandas.DataFrame(min15.json()['allPlayers'][i]['scores'], index=[i])
     min15DataScores = min15DataScores.append(temp)
 
-min20DataScores = pandas.DataFrame.from_dict(min20.json()['allPlayers'][0]['scores'])
+min20DataScores = pandas.DataFrame(min20.json()['allPlayers'][0]['scores'], index=[0])
 for i in range(1, 10):
     temp = pandas.DataFrame(min20.json()['allPlayers'][i]['scores'], index=[i])
     min20DataScores = min20DataScores.append(temp)
